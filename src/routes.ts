@@ -15,6 +15,9 @@ const itens = [
 routes.get('/itens',(request, response)=>{
     response.json(itens);
  });
- 
+
+routes.get('/fornecedores',(request, response)=>{
+    response.json("fornecedores...");
+ });
  
  export default routes;
