@@ -3,9 +3,9 @@ import Knex from 'knex';
 export async function up(knex: Knex) {
     return knex.schema.createTable('itens', table => {
         table.increments('item_codigo').primary();
-        table.string('item_name').notNullable();
-        table.string('item_category').notNullable();
-        table.string('item_detail').notNullable();
+        table.string('item_nome').notNullable();
+        table.string('item_categoria').notNullable();
+        table.string('item_detalhes').notNullable();
     });
 }
 
