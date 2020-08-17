@@ -22,6 +22,7 @@ routes.delete('/itens', itensController.delete);
 routes.get('/usuarios', usuariosController.show);
 routes.post('/usuarios', usuariosController.create);
 routes.delete('/usuarios', usuariosController.delete);
+routes.get('/usuarios/auth', usuariosController.autenticarUser);
 
 routes.get('/for-itens', fornecedores_ItensController.index);
 routes.post('/for-itens', fornecedores_ItensController.create);

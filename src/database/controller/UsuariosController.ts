@@ -55,6 +55,21 @@ class UsuariosController {
         await trx.commit();
         return response.json(msg);
     }
+    async autenticarUser(request: Request, response:Response){
+        const {
+            usu_login,
+            usu_senha
+        } = request.body;
+        const trx = await knex.transaction();
+        const existeId = String(await trx('usuarios')
+        .where('usu_login', usu_login)
+        .where('usu_senha', usu_senha)
+        .select('*')) ? true: false;
+        
+
+        await trx.commit();
+        return response.json(existeId);
+    }
 
 }
 

@@ -4,9 +4,15 @@ import { Request, Response } from 'express';
 class ItensController {
 
     async show(request: Request, response: Response) {
+        const {
+            item_categoria
+        } = request.body;
+
         const trx = await knex.transaction();
 
-        const itens = await trx('itens').select('*');
+        const itens = await trx('itens')
+        .select('*')
+        .where('item_categoria', item_categoria);
 
 
         await trx.commit();
